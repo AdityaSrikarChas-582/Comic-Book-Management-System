@@ -5,7 +5,7 @@ import { filterBlogs } from './BlogList';
 const Filter = ()=>{
     const {keyword} = useParams();
     const blogs = filterBlogs(keyword)
-    let body;
+    let body = null;
     if(keyword=="null") {
         body = <div className='body'>
             <h1 className='heading'>No Keyword Entered !</h1>

@@ -7,32 +7,21 @@ import axios from "axios";
 
 
 const filterBlogs = (keyword, blogs)=>{
-    keyword = keyword.toLowerCase();
-    return null;
-    // let filterList = Blogs.filter(blog=>{
-    //     return blog.title.toLowerCase().includes(keyword) || blog.author.toLowerCase().includes(keyword) ||
-    //     blog.genre.toLowerCase().includes(keyword) || blog.plot.toLowerCase().includes(keyword);
-    // })
-    // let FilterBlogs = filterList.map(blog=>{
-    //     return <Blog title={blog.title} author={blog.author} img={blog.img} plot={blog.plot} genre={blog.genre} year={blog.publishedON}/>
-    // })
-    // return FilterBlogs; 
+    let filterList = Blogs.filter(blog=>{
+        return blog.title.toLowerCase().includes(keyword) || blog.author.toLowerCase().includes(keyword) ||
+        blog.genre.toLowerCase().includes(keyword) || blog.plot.toLowerCase().includes(keyword);
+    })
+    let FilterBlogs = filterList.map(blog=>{
+        return <Blog title={blog.title} author={blog.author} img={blog.img} plot={blog.plot} genre={blog.genre} year={blog.publishedON}/>
+    })
+    return FilterBlogs;
 }
 
 const BlogList = ()=>{
     const sizeOfPage = 4;
-    const [blogs, setBlogs] = useState(null);
+    const [blogs, setBlogs] = useState(Blogs);
     const [keyword, setKeyword] = useState(null);
     const [currPage, setPage] = useState(1);
-
-    useEffect(()=>{
-        async function fetchData() {
-          const response = await axios.get('http://localhost:5000/blogs');
-          const {data} = response
-          setBlogs(data)
-        }
-        fetchData()
-    }, [])
 
     const deleteBlog = (index)=>{
         if(!blogs) return;
@@ -90,7 +79,9 @@ const BlogList = ()=>{
             </button>
             <div className="filter">
                 <input type="text" className="FilterInput" onChange={
-                    event=>setKeyword(event.target.value)
+                    (event)=>{
+                        setKeyword(event.target.value)
+                    }
                 } placeholder="Type keywords to search"/>
                 {keyword!=null && keyword.length>0 && <button><Link to={"/search/"+keyword}>SEARCH</Link></button>}
             </div>
