@@ -146,7 +146,7 @@ const Summary = ()=>{
         <div className="Summary">
             <h1>Summary</h1>
             <button className="home">
-            <Link to="/home">Original View</Link>
+            <Link to="/">Original View</Link>
             </button>
             <div className="border">
                 <div className="filter">

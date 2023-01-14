@@ -20,7 +20,7 @@ const Filter = ()=>{
     return (
         <div className="Filter">
             <button className="home">
-                <Link to="/home">All Comics</Link>
+                <Link to="/">All Comics</Link>
             </button>
             {body}
         </div>
