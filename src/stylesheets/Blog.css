@@ -1,0 +1,52 @@
+.blog {
+    padding: 10px;
+    height: auto;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 10px;
+    border: 0px solid;
+    border-radius: 10px;
+    color: white;
+    background-color: darkslateblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.blog h1 {
+    margin: auto;
+}
+
+.blog button {
+    margin-left: 80%;
+    margin-bottom: 3px;
+}
+
+.blog img {
+    margin: auto;
+    width: 490px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: scale-down;
+}
+
+.blog .title {
+    background-color: orangered;
+}
+
+.blog .author {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.blog .delete {
+    background-color: maroon;
+    color: white;
+    border: 0px solid;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.blog .delete:hover {
+    font-size: 89%;
+    background-color: crimson;
+    box-shadow: 1px 2px 3px crimson;
+}
